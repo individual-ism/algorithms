@@ -6,7 +6,6 @@ You must write an algorithm with O(log n) runtime complexity
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         try:
-            if nums.index(target):
-                return nums.index(target)
+            return nums.index(target)
         except:
             return -1
