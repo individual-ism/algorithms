@@ -17,3 +17,18 @@ class Solution:
             i += 1
             if isBadVersion(i):
                 return i
+            
+
+# Works when n != bad
+        median = int((n - 1) / 2)
+        i = median
+        while isBadVersion(i):
+            if isBadVersion(i - 1):
+                i -= 2
+            if not isBadVersion(i - 1):
+                return i
+        while not isBadVersion(i):
+            if not isBadVersion(i + 1):
+                i += 2
+            if isBadVersion(i + 1):
+                return i
