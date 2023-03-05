@@ -11,11 +11,18 @@ Your solution must use only constant extra space.
  * @return {number[]}
  */
 var twoSum = function(numbers, target) {
-    for (let index1 = 0; index1 < numbers.length - 1; index1++) {
-        for (let index2 = index1 + 1; index2 < numbers.length; index2++) {
-            if (numbers[index1] + numbers[index2] === target) {
-                return ([index1 + 1, index2 + 1])
-            }
+    let lowestIndex = 0
+    let highestIndex = numbers.length - 1
+
+    while (lowestIndex < highestIndex) {
+        let target_test = numbers[lowestIndex] + numbers[highestIndex]
+        if (target_test === target) {
+            return [lowestIndex + 1, highestIndex + 1]
+        }
+        if (target_test < target) {
+            lowestIndex += 1
+        } else if (target_test > target) {
+            highestIndex -= 1
         }
     }
 };
