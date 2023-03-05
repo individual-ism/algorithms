@@ -24,10 +24,18 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
-        for (let i = n; i > 0; i--) {
-            if (isBadVersion(i)) {
-                return i
+        let earliestVersion = 0
+        let latestVersion = n
+
+        while (earliestVersion < latestVersion) {
+            let midVersion = Math.floor((earliestVersion + latestVersion) / 2)
+
+            if (isBadVersion(midVersion)) {
+                latestVersion = midVersion
+            } else {
+                earliestVersion = midVersion + 1
             }
         }
+        return earliestVersion
     }
 };
