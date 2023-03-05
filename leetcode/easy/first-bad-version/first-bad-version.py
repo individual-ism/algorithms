@@ -32,3 +32,27 @@ class Solution:
                 i += 2
             if isBadVersion(i + 1):
                 return i
+            
+
+
+
+        median = int((n - 1) / 2)
+        i = median
+        if not isBadVersion(i) and isBadVersion(i + 1):
+            return i + 1
+        if isBadVersion(i) and not isBadVersion(i - 1):
+            return i - 1
+        if isBadVersion(i) and isBadVersion(i - 1):
+            i -= 2
+        if not isBadVersion(i) and not isBadVersion(i + 1):
+            i += 2
+        while isBadVersion(i):
+            if isBadVersion(i - 1):
+                i -= 2
+            if not isBadVersion(i - 1):
+                return i
+        while not isBadVersion(i):
+            if not isBadVersion(i + 1):
+                i += 2
+            if isBadVersion(i + 1):
+                return i
