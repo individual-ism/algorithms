@@ -8,8 +8,9 @@ Note that you must do this in-place without making a copy of the array.
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var moveZeroes = function(nums) {
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] == 0) {
+
+    for (let i = nums.length - 2; i >= 0; i--) {
+        if (nums[i] === 0) {
             nums.push(nums.splice(i, 1))
         }
     }
