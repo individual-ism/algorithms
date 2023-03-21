@@ -2,14 +2,7 @@
 
 class Solution:
     def reverseWords(self, s: str) -> str:
-        s = list(s)
-        reversed(s)
-        return ''.join(s)
-    
-    
-        newS = list(s.rsplit(' '))
-        for word in newS:
-            newWord = list(word)
-            rNewWord = newWord.reverse()
-            rNewWord
-        return rNewWord
+        brokenString = s.split()
+        for word in range(len(brokenString)):
+            brokenString[word] = brokenString[word][::-1]
+        return ' '.join(brokenString)
