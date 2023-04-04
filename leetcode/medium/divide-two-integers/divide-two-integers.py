@@ -47,3 +47,38 @@ class Solution:
             return -1 * quotient
         else:
             return quotient
+        
+
+# Base
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        quotient = 0
+        while dividend >= divisor:
+            if divisor >= 0:
+                dividend -= divisor
+                quotient += 1
+            else:
+                dividend += divisor
+                quotient -= 1
+        return quotient
+
+
+# 2023.04.02
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        quotient = 0
+        abs_quotient = abs(dividend) / abs(divisor)
+        if abs_quotient > 2**31 - 1 and (dividend / divisor > 0):
+            return 2**31 - 1
+        elif abs_quotient > 2**31 and (dividend / divisor < 0):
+                return -2**31
+        else:
+            while abs(dividend) >= abs(divisor):
+                if divisor >= 0:
+                    dividend -= divisor
+                    quotient += 1
+                else:
+                    dividend += divisor
+                    quotient -= 1
+
+        return quotient
