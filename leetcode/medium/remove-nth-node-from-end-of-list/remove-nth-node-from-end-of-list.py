@@ -8,11 +8,11 @@
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         former = latter = head
-        if not latter.next:
+        for node in range(n):
+            latter = latter.next
+        if not latter:
             return head.next
-        if not head.next:
-            return None
-        while latter.next.next:
+        while latter.next:
             latter = latter.next
             former = former.next
         former.next = former.next.next
