@@ -8,8 +8,7 @@ Note that 0 is neither positive nor negative.
 
 class Solution:
     def maximumCount(self, nums: List[int]) -> int:
-        neg = 0
-        pos = 0
+        neg, pos = 0, 0
         for num in nums:
             if num > 0:
                 pos += 1
