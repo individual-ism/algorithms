@@ -22,3 +22,21 @@ var maximumCount = function(nums) {
     })
     return Math.max(pos, neg);
 };
+
+// More efficient in runtime and memory
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maximumCount = function(nums) {
+    let pos = 0;
+    let neg = 0;
+    nums.forEach((num) => {
+        if (num > 0) {
+            pos += 1;
+        } else if (num < 0) {
+            neg += 1;
+        }
+    })
+    return (pos > neg) ? pos : neg;
+};

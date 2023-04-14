@@ -22,3 +22,23 @@ public:
         return (neg < pos) ? pos : neg;
     }
 };
+
+// Most efficient C++ solution in runtime and memory (Runtime: 14 ms | Memory: 17.7 MB)
+class Solution {
+public:
+    int maximumCount(vector<int>& nums) {
+        int neg = 0;
+        int pos = 0;
+        int i = 0;
+
+        while (i < nums.size()) {
+            if (nums[i] > 0) {
+                pos += 1;
+            } else if (nums[i] < 0) {
+                neg += 1;
+            }
+            i++;
+        }
+        return (neg < pos) ? pos : neg;
+    }
+};
