@@ -21,3 +21,15 @@ class Solution:
                 return reversedX
             else:
                 return 0
+
+# More efficient in memory usage 
+class Solution:
+    def reverse(self, x: int) -> int:
+        if x > 0:
+            reversedX = int(str(x)[::-1])
+        else:
+            reversedX = -int(str(int(x / -1))[::-1])
+        if reversedX > 2 ** 31 - 1 or reversedX < -2 ** 31:
+            return 0
+        else:
+            return reversedX

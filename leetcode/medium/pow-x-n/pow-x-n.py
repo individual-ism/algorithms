@@ -3,3 +3,8 @@
 class Solution:
     def myPow(self, x: float, n: int) -> float:
         return x ** n
+    
+# More efficient in memory usage
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        return x ** float(n)
