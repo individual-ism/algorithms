@@ -82,3 +82,23 @@ class Solution:
                     quotient -= 1
 
         return quotient
+    
+# 20 April 2023
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        quotient = 0
+        abs_quotient = abs(dividend / divisor)
+        if abs_quotient > (2 ** 31 - 1) and ((divisor > 0 and dividend > 0) or (divisor < 0 and dividend < 0)):
+            return 2 ** 31 - 1
+        if abs_quotient > (2 ** 31) and ((divisor > 0 and dividend < 0) or (divisor < 0 and dividend > 0)):
+            return -2 ** 31
+        if dividend == divisor:
+            return 1
+        while abs(dividend) > abs(divisor):
+            if (dividend > 0 and divisor > 0) or (dividend < 0 and divisor < 0):
+                dividend -= divisor
+                quotient += 1
+            elif (dividend > 0 and divisor < 0) or (dividend < 0 and divisor > 0):
+                dividend += divisor
+                quotient -= 1
+        return quotient
