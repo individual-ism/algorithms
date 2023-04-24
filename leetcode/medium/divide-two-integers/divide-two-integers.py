@@ -102,3 +102,31 @@ class Solution:
                 dividend += divisor
                 quotient -= 1
         return quotient
+    
+# 22 April 2023
+class Solution:
+    def divide(self, dividend: int, divisor: int) -> int:
+        mid_div = math.floor(abs(dividend) ** 0.5)
+        upperLimit = 2147483647
+        lowerLimit = -2147483648
+        quotient = 0
+        # workingDividend = dividend
+        # workingDivisor = divisor
+        abs_quotient = abs(dividend) // abs(divisor)
+        if abs_quotient >= upperLimit and ((divisor > 0 and dividend > 0) or (divisor < 0 and dividend < 0)):
+            return upperLimit
+        elif abs_quotient >= -lowerLimit and ((divisor > 0 and dividend < 0) or (divisor < 0 and dividend > 0)):
+            return lowerLimit
+        elif dividend == divisor:
+            return 1
+        elif (dividend == -divisor) or (-dividend == divisor):
+            return -1
+        else:
+            while mid_div >= abs(divisor):
+                if (dividend > 0 and divisor > 0) or (dividend < 0 and divisor < 0):
+                    mid_div -= divisor
+                    quotient += 1
+                elif (dividend > 0 and divisor < 0) or (dividend < 0 and divisor > 0):
+                    mid_div += divisor
+                    quotient -= 1
+            return quotient + quotient
