@@ -7,4 +7,4 @@ class Solution:
         for i in b:
             bString += str(i)
         print(bString)
-        return a ** int(bString)
+        return a ** int(bString) % 1337
