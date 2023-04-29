@@ -2,9 +2,7 @@
 
 class Solution:
     def superPow(self, a: int, b: List[int]) -> int:
-        if a == 1: return 1
         bString = ''
         for i in b:
             bString += str(i)
-        print(bString)
-        return a ** int(bString) % 1337
+        return pow(a, int(bString), 1337)
