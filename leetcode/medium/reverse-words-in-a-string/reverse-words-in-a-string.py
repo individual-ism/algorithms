@@ -18,3 +18,6 @@ class Solution:
             finalString += wordList[i] + ' '
         return finalString.strip()
     
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        return ' '.join(s.split()[::-1]).strip()
