@@ -11,7 +11,7 @@ Given an integer n, return a list of all simplified fractions between 0 and 1 (e
 #                     sim_frac.append(f"{numer}/{denom}")
 #         return sim_frac
 
-
+# Needs to account for other prime numbers
 class Solution:
     def simplifiedFractions(self, n: int) -> List[str]:
         sim_frac = []
