@@ -5,9 +5,16 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         indices = []
-        for i in nums:
-            for j in nums:
-                if (target - i == j) and (nums.index(j) > nums.index(i)):
-                    indices.append(nums.index(i))
-                    indices.append(nums.index(j))
+        for i in range(len(nums) - 1):
+            for j in range(len(nums)):
+                if (nums[i] + nums[j] == target) and (i < j):
+                    indices.append(i)
+                    indices.append(j)
                     return indices
+                
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums) - 1):
+            for j in range(len(nums)):
+                if (nums[i] + nums[j] == target) and (i < j):
+                    return [i, j]
