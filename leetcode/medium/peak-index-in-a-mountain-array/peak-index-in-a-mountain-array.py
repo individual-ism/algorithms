@@ -17,3 +17,7 @@ class Solution:
             if arr[i] > arr[i + 1]:
                 return i
             continue
+
+class Solution:
+    def peakIndexInMountainArray(self, arr: List[int]) -> int:
+        return arr.index(max(arr))
