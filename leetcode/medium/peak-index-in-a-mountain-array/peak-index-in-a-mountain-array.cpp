@@ -12,6 +12,7 @@ You must solve it in O(log(arr.length)) time complexity.
 */
 
 // More time efficient; less memory efficient
+
 class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
@@ -36,3 +37,5 @@ public:
         return -1;
     };
 };
+
+// 
