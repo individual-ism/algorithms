@@ -19,3 +19,23 @@ public:
         }
     }
 };
+
+class Solution {
+public:
+    int recursiveFormula(const vector<int>& numbers, int target, int left, int right) {
+        if (left > right) return -1;
+
+        int mid = numbers.size() / 2;
+
+        if (numbers[mid] == target) {
+            return mid;
+        } else if (numbers[mid] < target) {
+            return recursiveFormula(numbers, target, mid + 1, right);
+        } else {
+            return recursiveFormula(numbers, target, left, mid - 1);
+        }
+    }
+    int searchInsert(vector<int>& nums, int target) {
+        return recursiveFormula(nums, target, 0, nums.size() - 1);
+    }
+};
